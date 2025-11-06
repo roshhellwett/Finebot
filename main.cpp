@@ -42,7 +42,7 @@ void disfineFunc(int days, int fine, int amount)
 {
    printf("\n");
    printf("\n:--DISPLAY SECTION--:\n");
-   printf("FINE : %d(%d DAYS * %dRS)",fine, days, amount);
+   printf("FINE : %d.00Rs (%d DAYS * %dRS)",fine, days, amount);
    printf("\n");
 }
 char loopFunc(char choice)
@@ -51,6 +51,7 @@ char loopFunc(char choice)
    printf(":--CALCULATE FINE AGAIN--:\n");
    printf("Y FOR YES\n");
    printf("N FOR NO\n");
+   printf("-->");
    scanf(" %c",&choice);
    printf("\n");
    return choice;
@@ -61,7 +62,9 @@ int main()
    do
    {
       int days, fine, amount;
-      printf("Enter the number of days: ");
+      printf(":--USER SECTION--:\n");
+      printf("HOW MANY DAYS\n");
+      printf("-->");
       days = inputdaysFunc(days);
       fine = calcfineFunc(days, fine);
       amount = amountFunc(days, amount);
@@ -69,7 +72,7 @@ int main()
       choice = loopFunc(choice);
       if (choice == 'n' || choice == 'N')
       {
-         printf("\n:--THANKS FOT USING--:\n");
+         printf("\n:--THANKS FOT USING FineBot--:\n");
          exit(0);
       }
    }while (choice == 'y' || choice == 'Y');
